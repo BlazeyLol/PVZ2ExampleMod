@@ -2,9 +2,9 @@
 
 # Credits
 
-**Brekko and Jay Krow** - original Lib Projects
-**Snowie** - help with reverse engineering addresses
-**Vi** - static substrate and arm64 hooking libs
+* **Brekko and Jay Krow** - original Lib Projects
+* **Snowie** - help with reverse engineering addresses
+* **Vi** - static substrate and arm64 hooking libs
 
 # Main Features
 
