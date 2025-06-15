@@ -1,0 +1,40 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="PVZ2ExampleMod.cpp" />
+    <ClCompile Include="memUtils.cpp" />
+    <ClCompile Include="Hooks\And64Inline\And64InlineHook.cpp" />
+    <ClCompile Include="Hooks\Substrate\SubstrateHook.cpp" />
+    <ClCompile Include="Hooks\Substrate\SubstratePosixMemory.cpp" />
+    <ClCompile Include="PvZ2\ZombiePiano.cpp" />
+    <ClCompile Include="PvZ2\Board.cpp" />
+    <ClCompile Include="PvZ2\ZombieCamel.cpp" />
+    <ClCompile Include="PvZ2\NameMapper.cpp" />
+    <ClCompile Include="PvZ2\ImmunityMgr.cpp" />
+    <ClCompile Include="PvZ2\WorldMap.cpp" />
+    <ClCompile Include="Sexy\RtObject.hpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="PVZ2ExampleMod.hpp" />
+    <ClInclude Include="pch.h" />
+    <ClInclude Include="memUtils.hpp" />
+    <ClInclude Include="Logging.hpp" />
+    <ClInclude Include="SexyTypes.hpp" />
+    <ClInclude Include="PvZ2\Board.hpp" />
+    <ClInclude Include="Hooks\And64Inline\And64InlineHook.hpp" />
+    <ClInclude Include="Hooks\Substrate\CydiaSubstrate.h" />
+    <ClInclude Include="Hooks\Substrate\SubstrateARM.hpp" />
+    <ClInclude Include="Hooks\Substrate\SubstrateHook.h" />
+    <ClInclude Include="PvZ2\ZombiePiano.hpp" />
+    <ClInclude Include="PvZ2\ZombieCamel.hpp" />
+    <ClInclude Include="PvZ2\NameMapper.hpp" />
+    <ClInclude Include="PvZ2\ImmunityMgr.hpp" />
+    <ClInclude Include="PvZ2\WorldMap.hpp" />
+    <ClInclude Include="Sexy\RtClass.hpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include=".gitignore" />
+    <None Include=".gitattributes" />
+    <None Include="README.md" />
+  </ItemGroup>
+</Project>
