@@ -13,6 +13,7 @@
     <ClCompile Include="PvZ2\ImmunityMgr.cpp" />
     <ClCompile Include="PvZ2\WorldMap.cpp" />
     <ClCompile Include="Sexy\RtObject.hpp" />
+    <ClCompile Include="Sexy\RtWeakPtr.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="PVZ2ExampleMod.hpp" />
@@ -31,6 +32,7 @@
     <ClInclude Include="PvZ2\ImmunityMgr.hpp" />
     <ClInclude Include="PvZ2\WorldMap.hpp" />
     <ClInclude Include="Sexy\RtClass.hpp" />
+    <ClInclude Include="Sexy\RtWeakPtr.hpp" />
   </ItemGroup>
   <ItemGroup>
     <None Include=".gitignore" />

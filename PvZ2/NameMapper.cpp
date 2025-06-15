@@ -41,7 +41,7 @@ void* hkCreatePlantNameMapper(PlantNameMapper* self)
     oPlantNameMapperCtor(self);
 
     g_modPlantTypenames.clear();
-    NameMapperBase::PreHookZombieNameMapper();
+    NameMapperBase::PreHookPlantNameMapper();
 
     LOGI("Extra typenames size = %d", g_modPlantTypenames.size());
 
