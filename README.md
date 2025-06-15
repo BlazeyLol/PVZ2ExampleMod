@@ -18,8 +18,7 @@
 * Adding new internal Zombie IDs
 * Mummy Memory crash fix
 * Custom dancing zombie list for Pianos
-* Board zoom
-* Removed healer/magician immunities
+* More is going to come, when I fix ARM64 compatibility issues
 
 ### APK Integration
 
