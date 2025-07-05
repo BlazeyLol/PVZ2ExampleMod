@@ -2,26 +2,6 @@
 #include <cstdint>
 #include <string>
 
-#ifdef __arm__
-#define UINT uint
-#define UINTPTR uintptr_t
-#define INT int
-#define SHORT short
-#define USHORT unsigned short
-#define LONG long
-#define ULONG unsigned long
-
-#elif __aarch64__
-#define UINT uint64_t
-#define UINTPTR uint64_t
-#define INT int64_t
-#define SHORT long short
-#define USHORT unsigned SHORT
-#define LONG long long
-#define ULONG unsigned LONG
-
-#endif
-
 namespace Sexy
 {
 	struct SexyVector2 {
@@ -45,12 +25,12 @@ namespace Sexy
 	};
 
 	struct Point {
-		INT x;
-		INT y;
+		int x;
+		int y;
 
 		Point() {};
 
-		Point(INT x, INT y) : x(x), y(y) {};
+		Point(int x, int y) : x(x), y(y) {};
 	};
 
 	struct FPoint {
@@ -65,7 +45,7 @@ namespace Sexy
 
 struct Rect
 {
-	INT mX, mY, mWidth, mHeight;
+	int mX, mY, mWidth, mHeight;
 
 	Rect() {
 		this->mX = 0;
@@ -74,7 +54,7 @@ struct Rect
 		this->mHeight = 0;
 	}
 
-	Rect(INT mX, INT mY, INT mWidth, INT mHeight) {
+	Rect(int mX, int mY, int mWidth, int mHeight) {
 		this->mX = mX;
 		this->mY = mY;
 		this->mWidth = mWidth;

@@ -1,7 +1,7 @@
 #include "RtWeakPtr.hpp"
 
-INT getWeakPtr(INT addr) {
-    Sexy::RtWeakPtr<INT> a = Sexy::RtWeakPtr<INT>();
-    a.FromOther((Sexy::RtWeakPtr<INT>*)addr);
-    return (INT)a.get();
+int64_t getWeakPtr(int64_t addr) {
+    Sexy::RtWeakPtr<int64_t> a = Sexy::RtWeakPtr<int64_t>();
+    a.FromOther((Sexy::RtWeakPtr<int64_t>*)addr);
+    return (int64_t)a.get();
 }

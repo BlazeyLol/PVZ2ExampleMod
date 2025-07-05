@@ -5,17 +5,17 @@
 #include "Logging.hpp"
 
 #define LOG_RETURN_ADDRESS(level) \
-LOGI("%p", (uintptr_t)__builtin_return_address(level) - g_libAddress);
+LOGI("%p", (UINTPTR)__builtin_return_address(level) - g_libAddress);
 
-extern uint g_libAddress;
+extern uint64_t g_libAddress;
 // Get base address of a library (.so) loaded in memory.
-uint getLibraryAddress(const char* libName);
+uint64_t getLibraryAddress(const char* libName);
 // Get actual offset of address inside libPVZ2.so
-uint getActualOffset(uint offset);
+uint64_t getActualOffset(uint64_t offset);
 // Get offset within libPVZ2.so from a running program
-uint getOriginalOffset(uint actualOffset);
+uint64_t getOriginalOffset(uint64_t actualOffset);
 // Hook a function in libPVZ2
-void PVZ2HookFunction(uint offset, void* replace, void** result, const char* funcName);
+void PVZ2HookFunction(uint64_t offset, void* replace, void** result, const char* funcName);
 
 void* copyVFTable(int vftableAddr, int numVFuncs);
 

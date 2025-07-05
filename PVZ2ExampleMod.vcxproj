@@ -193,12 +193,6 @@
     <ClCompile Include="Hooks\Substrate\SubstratePosixMemory.cpp" />
     <ClCompile Include="PVZ2ExampleMod.cpp" />
     <ClCompile Include="memUtils.cpp" />
-    <ClCompile Include="PvZ2\Board.cpp" />
-    <ClCompile Include="PvZ2\ImmunityMgr.cpp" />
-    <ClCompile Include="PvZ2\NameMapper.cpp" />
-    <ClCompile Include="PvZ2\WorldMap.cpp" />
-    <ClCompile Include="PvZ2\ZombieCamel.cpp" />
-    <ClCompile Include="PvZ2\ZombiePiano.cpp" />
     <ClCompile Include="Sexy\RtObject.hpp" />
     <ClCompile Include="Sexy\RtWeakPtr.cpp" />
   </ItemGroup>
@@ -212,11 +206,7 @@
     <ClInclude Include="pch.h" />
     <ClInclude Include="memUtils.hpp" />
     <ClInclude Include="PvZ2\Board.hpp" />
-    <ClInclude Include="PvZ2\ImmunityMgr.hpp" />
-    <ClInclude Include="PvZ2\NameMapper.hpp" />
     <ClInclude Include="PvZ2\WorldMap.hpp" />
-    <ClInclude Include="PvZ2\ZombieCamel.hpp" />
-    <ClInclude Include="PvZ2\ZombiePiano.hpp" />
     <ClInclude Include="SexyTypes.hpp" />
     <ClInclude Include="Sexy\RtClass.hpp" />
     <ClInclude Include="Sexy\RtWeakPtr.hpp" />

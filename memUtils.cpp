@@ -7,16 +7,16 @@
 #include "Hooks/And64Inline/And64InlineHook.hpp"
 #endif
 
-uint g_libAddress = NULL;
+uint64_t g_libAddress = NULL;
 
-uint getLibraryAddress(const char* libName) {
+uint64_t getLibraryAddress(const char* libName) {
     FILE* fp = fopen("/proc/self/maps", "rt");
     if (fp == NULL) {
         perror("fopen");
         return 0;
     }
 
-    uint addr = 0;
+    uint64_t addr = 0;
     char line[1024];
 
     while (fgets(line, sizeof(line), fp) != NULL) {
@@ -31,7 +31,7 @@ uint getLibraryAddress(const char* libName) {
     return addr;
 }
 
-uint getActualOffset(uint offset)
+uint64_t getActualOffset(uint64_t offset)
 {
     if (g_libAddress == 0)
     {
@@ -40,7 +40,7 @@ uint getActualOffset(uint offset)
     return g_libAddress + offset;
 }
 
-uint getOriginalOffset(uint actualOffset) {
+uint64_t getOriginalOffset(uint64_t actualOffset) {
     if (g_libAddress == 0)
     {
         g_libAddress = getLibraryAddress("libPVZ2.so");
@@ -49,7 +49,7 @@ uint getOriginalOffset(uint actualOffset) {
 }
 
 #if __arm__
-void PVZ2HookFunction(uint offset, void* replace, void** result, const char* funcName)
+void PVZ2HookFunction(uint64_t offset, void* replace, void** result, const char* funcName)
 {
     MSHookFunction((void*)getActualOffset(offset), replace, result);
     LOGI("Hooked %s", funcName);
@@ -57,7 +57,7 @@ void PVZ2HookFunction(uint offset, void* replace, void** result, const char* fun
 
 #elif __aarch64__
 
-void PVZ2HookFunction(uint offset, void* replace, void** result, const char* funcName)
+void PVZ2HookFunction(uint64_t offset, void* replace, void** result, const char* funcName)
 {
     A64HookFunction((void*)getActualOffset(offset), replace, result);
     LOGI("Hooked %s", funcName);
@@ -92,7 +92,7 @@ void* createChildVFTable(int vFuncsCount, int parentVftable, int nuMVFuncsToCopy
 
 void setVFTable(void* obj, uintptr_t newVftablePtr)
 {
-    *reinterpret_cast<int*>(UINTPTR(obj)) = newVftablePtr;
+    *reinterpret_cast<int*>(uintptr_t(obj)) = newVftablePtr;
 }
 
 void* GetVirtualFunc(void* obj, int index) {

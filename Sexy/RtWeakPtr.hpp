@@ -104,9 +104,9 @@ namespace Sexy
 			if (!temp.is_invalid())
 			{
 				LOGI("Not invalid");
-				INT typeId = temp.type_id();
+				int typeId = temp.type_id();
 
-				typedef void* (*sub10DF644)(void*, INT);
+				typedef void* (*sub10DF644)(void*, int);
 				sub10DF644 pSub10DF644 = (sub10DF644)getActualOffset(OFFSET_RTWEAKPTR_UNKFUNC2);
 
 				void* v11 = pSub10DF644(registry, typeId);
@@ -123,9 +123,9 @@ namespace Sexy
 		}
 
 	private:
-		INT data1;
-		INT data2;
+		int data1;
+		int data2;
 	};
 }
 
-INT getWeakPtr(INT addr);
+int64_t getWeakPtr(int64_t addr);

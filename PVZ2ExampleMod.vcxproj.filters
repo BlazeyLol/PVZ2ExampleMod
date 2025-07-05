@@ -6,12 +6,6 @@
     <ClCompile Include="Hooks\And64Inline\And64InlineHook.cpp" />
     <ClCompile Include="Hooks\Substrate\SubstrateHook.cpp" />
     <ClCompile Include="Hooks\Substrate\SubstratePosixMemory.cpp" />
-    <ClCompile Include="PvZ2\ZombiePiano.cpp" />
-    <ClCompile Include="PvZ2\Board.cpp" />
-    <ClCompile Include="PvZ2\ZombieCamel.cpp" />
-    <ClCompile Include="PvZ2\NameMapper.cpp" />
-    <ClCompile Include="PvZ2\ImmunityMgr.cpp" />
-    <ClCompile Include="PvZ2\WorldMap.cpp" />
     <ClCompile Include="Sexy\RtObject.hpp" />
     <ClCompile Include="Sexy\RtWeakPtr.cpp" />
   </ItemGroup>
@@ -26,10 +20,6 @@
     <ClInclude Include="Hooks\Substrate\CydiaSubstrate.h" />
     <ClInclude Include="Hooks\Substrate\SubstrateARM.hpp" />
     <ClInclude Include="Hooks\Substrate\SubstrateHook.h" />
-    <ClInclude Include="PvZ2\ZombiePiano.hpp" />
-    <ClInclude Include="PvZ2\ZombieCamel.hpp" />
-    <ClInclude Include="PvZ2\NameMapper.hpp" />
-    <ClInclude Include="PvZ2\ImmunityMgr.hpp" />
     <ClInclude Include="PvZ2\WorldMap.hpp" />
     <ClInclude Include="Sexy\RtClass.hpp" />
     <ClInclude Include="Sexy\RtWeakPtr.hpp" />
