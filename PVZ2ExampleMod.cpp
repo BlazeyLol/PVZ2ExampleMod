@@ -121,10 +121,10 @@ void* hkCreatePlantNameMapper(PlantNameMapper* self)
 // The original function is broken for some reason. We don't need it
 uint64_t oCamelZombieFunc = NULL;
 
-typedef void(*camelMinigameModuleFunc)(int, int, int);
+typedef void(*camelMinigameModuleFunc)(int64_t, int64_t, int64_t);
 camelMinigameModuleFunc cmmFunc = (camelMinigameModuleFunc)getActualOffset(CAMEL_MINIGAME_MODULE_FUNC);
 
-void hkCamelZombieFunc(int a1, int a2, int a3)
+void hkCamelZombieFunc(int64_t a1, int64_t a2, int64_t a3)
 {
     // Redirect call to some function in CamelMinigameModule
     // This fixes the crash when camels are rising from the ground
@@ -189,13 +189,13 @@ inline int worldMapBoundaryMovement(WorldMap* self, float fX, float fY, bool all
 #define INIT_PIANO_LIST_PTR 0x2581BD0
 #endif
 
-typedef bool (*initZombiePianoList)(int, int);
+typedef bool (*initZombiePianoList)(int64_t, int64_t);
 initZombiePianoList oInitZombiePianoList = NULL;
 
 bool g_pianoListInitialized = false;
 
 std::vector<std::string>* g_pianoList;
-bool hkInitZombiePianoList(int a1, int a2)
+bool hkInitZombiePianoList(int64_t a1, int64_t a2)
 {
     // This function is called every frame when a piano zombie is on screen
     // So this global bool is needed to prevent wasting a massive amount of cpu time
@@ -280,10 +280,10 @@ AspectRatio GetAspectRatio()
     }
 }
 
-typedef void(*ReinitForSurfaceChange)(int, int, int, int, int);
+typedef void(*ReinitForSurfaceChange)(int64_t, int64_t, int64_t, int64_t, int64_t);
 ReinitForSurfaceChange oRFSC = nullptr;
 
-void hkReinitForSurfaceChange(int thisptr, int a2, int width, int height, int a5)
+void hkReinitForSurfaceChange(int64_t thisptr, int64_t a2, int64_t width, int64_t height, int64_t a5)
 {
     gWidth = width;
     gHeight = height;
@@ -366,21 +366,21 @@ void* hkBoardCtor(Board* board)
 // we don't need to save a pointer to the original functions
 uint64_t dispose;
 
-void hkMagicianHealerConditionFunc(int a1, int condition)
+void hkMagicianHealerConditionFunc(int64_t a1, int64_t condition)
 {
     // Hardcoded immunity checks would go here
     return;
 }
 
-bool hkMagicianHealerImmuneToShrink(int a1)
+bool hkMagicianHealerImmuneToShrink(int64_t a1)
 {
     // true = immune to shrinking
     return false;
 }
 
-bool hkMagicianInitializeFamilyImmunities(int a1, int64_t a2)
+bool hkMagicianInitializeFamilyImmunities(int64_t a1, int64_t a2)
 {
-    typedef bool(*zFamilyFunc)(int);
+    typedef bool(*zFamilyFunc)(int64_t);
     zFamilyFunc func = (zFamilyFunc)getActualOffset(Z_FAMILY_FUNC_ADDR); // function 93 in Zombie's vftable 
     return func(a1);
 }
